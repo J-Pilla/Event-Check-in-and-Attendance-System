@@ -1,0 +1,22 @@
+name: CI and Testing
+
+on: # trigger
+    push:
+        branches: [master, main, **]
+    pull_request:
+        branches: [master, main, **]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest # runner machine
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: "24.13.0"
+
+            - name: Run the test module
+              run: npm --test
