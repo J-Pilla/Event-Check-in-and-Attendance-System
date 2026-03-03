@@ -168,7 +168,7 @@ test.describe("JEvent module tests", () => {
 			let event;
 
 			test.beforeEach(() => {
-				event = new JEvent("Birthday", new Date(2026, 11, 2026));
+				event = new JEvent("Birthday", new Date(2026, 11, 20));
 			});
 
 			test("pushAttendees changes attendeeCount", () => {
